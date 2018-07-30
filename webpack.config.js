@@ -5,6 +5,7 @@ var DIS_DIR = path.resolve(__dirname, "dist")
 var SRC_DIR = path.resolve(__dirname, "src")
 
 var config = {
+  mode: 'development',
   entry: SRC_DIR+"/app/index.js",
   output:{
     path:DIS_DIR+"/app",

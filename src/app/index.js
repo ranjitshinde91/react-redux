@@ -1,35 +1,38 @@
 import React from 'react'
 import {render} from 'react-dom'
-import {Header} from './components/Header'
-import {Home} from './components/Home'
-import {User} from './components/User'
-
 import {BrowserRouter} from 'react-router-dom'
 import {Switch, Route} from 'react-router-dom'
+import {Header} from './components/Header'
+import {Home} from './components/Home'
+import UserPage from './pages/User'
 
-class App extends React.Component{
+import {configureStore, history} from './store/configure-store'
+import {Provider} from 'react-redux'
 
-  constructor(props){
-    super();
-  }
-
-  render(){
+const App = () => {
     return(
         <div className="container">
           <div className="row">
             <div>
               <Header/>
             </div>
-          </div>    
+          </div>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path='/user' component={User} />
+            <Route path='/user' component={UserPage} />
           </Switch>
         </div>
     );
-  }
 }
 
-render(<BrowserRouter>
+const initialState = {
+	sample: {
+		name: "ThoughtWorks"
+	}
+}
+
+const store = configureStore(initialState)
+
+render(<Provider store={store} ><BrowserRouter>
           <App/>
-      </BrowserRouter>, window.document.getElementById("app"));
+      </BrowserRouter></Provider>, window.document.getElementById("app"));

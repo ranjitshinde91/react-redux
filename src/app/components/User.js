@@ -3,7 +3,7 @@ import React from 'react'
 export const User = (props) =>{
   return(
     <div>
-      <p>I am User</p>
+      <p>I am User {props.name}</p>
     </div>
   );
 }
