@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "basic reactjs project",
   "main": "index.js",
-
   "jest": {
     "bail": true,
     "verbose": true,
@@ -22,7 +21,7 @@
     "start": "npm run build",
     "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot --history-api-fallback",
     "build-prod": "webpack -p && cp src/index.html dist/index.html",
-    "test":"jest -u",
+    "test": "jest -u",
     "test-watch": "jest -u --watch"
   },
   "author": "Ranjit Shinde",
@@ -43,6 +42,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.4.2",
     "react-test-renderer": "^16.4.1",
     "webpack": "^4.16.2",

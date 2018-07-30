@@ -9,6 +9,7 @@ export const mapStateToProps = (state) => {
 		name: state.sample.name
 	}
 }
+
 export const mapDispatchToProps = (dispatch) =>{
   return{
     onButtonClick: () => dispatch(sampleAction())
