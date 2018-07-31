@@ -3,16 +3,13 @@ import {Switch, Route} from 'react-router-dom'
 import {Header} from '../components/Header'
 import {Home} from '../components/Home'
 import UserPage from '../pages/User'
-
+import Jumbotron from '../components/Jumbotron'
 
 const App = () => {
     return(
         <div className="container">
-          <div className="row">
-            <div>
-              <Header/>
-            </div>
-          </div>
+          <Header/>
+          <Jumbotron/>  
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path='/user' component={UserPage} />
